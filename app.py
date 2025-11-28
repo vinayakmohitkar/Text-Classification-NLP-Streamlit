@@ -10,7 +10,6 @@ def load_models():
     models = {}
     models["Naive Bayes"] = joblib.load("naive_bayes_sentiment_model.pkl")
     models["Logistic Regression"] = joblib.load("logistic_regression_sentiment_model.pkl")
-    # If you have Random Forest:
     # models["Random Forest"] = joblib.load("random_forest_sentiment_model.pkl")
     return models
 
