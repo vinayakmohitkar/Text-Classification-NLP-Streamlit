@@ -2,25 +2,18 @@
 import streamlit as st
 import joblib
 
+
+import joblib
+
 @st.cache_resource
 def load_models():
     models = {}
     models["Naive Bayes"] = joblib.load("naive_bayes_sentiment_model.pkl")
     models["Logistic Regression"] = joblib.load("logistic_regression_sentiment_model.pkl")
-
-import pickle
-import numpy as np
-
-# Load models
-@st.cache_resource
-def load_models():
-    models = {}
-    with open("naive_bayes_sentiment_model.pkl", "rb") as f:
-        models["Naive Bayes"] = pickle.load(f)
-    with open("logistic_regression_sentiment_model.pkl", "rb") as f:
-        models["Logistic Regression"] = pickle.load(f)
-
+    # If you have Random Forest:
+    # models["Random Forest"] = joblib.load("random_forest_sentiment_model.pkl")
     return models
+
 
 models = load_models()
 
